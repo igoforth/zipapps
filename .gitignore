@@ -130,3 +130,7 @@ dmypy.json
 _temp*
 *_cache/
 *.pyz
+
+# custom
+zipapps/ensure_zipapps.py
+zipapps/entry_point.py

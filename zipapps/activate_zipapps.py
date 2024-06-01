@@ -4,7 +4,7 @@ from pathlib import Path
 from sys import modules, stderr
 
 
-def activate(path=None):
+def activate(path: Path | None = None):
     path = Path(path) if path else Path(__file__).parent
     path_str = path.absolute().as_posix()
     if zipfile.is_zipfile(path_str):
@@ -14,5 +14,5 @@ def activate(path=None):
             del _tmp
             return True
         except ImportError as err:
-            stderr.write(f'WARNING: activate failed for {err!r}\n')
+            stderr.write(f"WARNING: activate failed for {err!r}\n")
             raise err
